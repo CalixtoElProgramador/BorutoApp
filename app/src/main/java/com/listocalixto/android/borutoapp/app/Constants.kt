@@ -14,4 +14,6 @@ object Constants {
 
     const val ARG_KEY_DETAILS = "heroId"
 
+    const val SIZE_ON_BOARDING_PAGE = 3
+
 }
