@@ -8,7 +8,7 @@ import com.listocalixto.android.borutoapp.data.local.dao.HeroRemoteKeyDao
 import com.listocalixto.android.borutoapp.domain.model.Hero
 import com.listocalixto.android.borutoapp.domain.model.HeroRemoteKey
 
-@Database(entities = [Hero::class, HeroRemoteKey::class], version = 1)
+@Database(entities = [Hero::class, HeroRemoteKey::class], version = 1, exportSchema = false)
 @TypeConverters(DatabaseConverter::class)
 abstract class AppDatabase: RoomDatabase() {
 

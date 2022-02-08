@@ -11,7 +11,7 @@ pluginManagement {
                 useModule("com.google.dagger:hilt-android-gradle-plugin:2.40.5")
             }
             if (requested.id.id == 'kotlinx-serialization') {
-                useModule("org.jetbrains.kotlin:kotlin-serialization:1.6.0")
+                useModule("org.jetbrains.kotlin:kotlin-serialization:1.5.31")
             }
         }
     }

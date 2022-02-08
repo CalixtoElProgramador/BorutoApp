@@ -42,7 +42,7 @@ android {
     }
     composeOptions {
         kotlinCompilerExtensionVersion compose_version
-        kotlinCompilerVersion '1.5.21'
+        kotlinCompilerVersion '1.5.31'
     }
     packagingOptions {
         resources {
@@ -74,6 +74,7 @@ dependencies {
     implementation "androidx.room:room-runtime:2.4.1"
     kapt "androidx.room:room-compiler:2.4.1"
     implementation "androidx.room:room-ktx:2.4.1"
+    implementation "androidx.room:room-paging:2.4.1"
 
     // Retrofit
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'

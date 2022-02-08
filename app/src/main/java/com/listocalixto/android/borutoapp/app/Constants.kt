@@ -2,6 +2,7 @@ package com.listocalixto.android.borutoapp.app
 
 object Constants {
 
+    const val DATABASE_NAME = "boruto_database"
     const val TABLE_HERO = "hero_table"
     const val TABLE_HERO_REMOTE = "hero_remote_table"
 
