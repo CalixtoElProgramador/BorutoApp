@@ -2,6 +2,8 @@ package com.listocalixto.android.borutoapp.app
 
 object Constants {
 
+    const val BASE_URL = "http://10.0.2.2:8081"
+
     const val DATABASE_NAME = "boruto_database"
     const val TABLE_HERO = "hero_table"
     const val TABLE_HERO_REMOTE = "hero_remote_table"
@@ -19,5 +21,7 @@ object Constants {
 
     const val SIZE_ON_BOARDING_PAGE = 3
     const val LAST_ON_BOARDING_PAGE = SIZE_ON_BOARDING_PAGE - 1
+
+
 
 }

@@ -11,4 +11,6 @@
     <string name="description_on_boarding_page_three">Check out your hero\'s power and see how much are they strong comparing to others.</string>
     <string name="cd_image_on_boarding_page">On Boarding Image</string>
     <string name="finish">Finish</string>
+    <string name="cd_icon_top_bar_search">Search Icon</string>
+    <string name="home_top_bar_title">Explore</string>
 </resources>
