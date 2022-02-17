@@ -17,26 +17,31 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.text.toUpperCase
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import com.google.accompanist.pager.*
 import com.listocalixto.android.borutoapp.R
+import com.listocalixto.android.borutoapp.app.Constants.LAST_ON_BOARDING_PAGE
 import com.listocalixto.android.borutoapp.app.Constants.SIZE_ON_BOARDING_PAGE
 import com.listocalixto.android.borutoapp.domain.model.OnBoardingPage
+import com.listocalixto.android.borutoapp.navigation.Screen
 import com.listocalixto.android.borutoapp.ui.theme.*
 
 @ExperimentalAnimationApi
 @ExperimentalPagerApi
 @Composable
-fun WelcomeScreen(navController: NavHostController) {
+fun WelcomeScreen(
+    navController: NavHostController,
+    welcomeViewModel: WelcomeViewModel = hiltViewModel()
+) {
     val pages = listOf(OnBoardingPage.Firts, OnBoardingPage.Second, OnBoardingPage.Third)
     val pagerState = rememberPagerState()
 
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(color = MaterialTheme.colors.welcomeScreenBackgroundColor)
+            .background(color = MaterialTheme.colors.background)
     ) {
         HorizontalPager(
             modifier = Modifier.weight(10f),
@@ -57,7 +62,9 @@ fun WelcomeScreen(navController: NavHostController) {
             spacing = PAGING_INDICATOR_SPACING
         )
         FinishButton(modifier = Modifier.weight(1f), pagerState = pagerState) {
-            // NO-OP
+            navController.popBackStack()
+            navController.navigate(Screen.Home.route)
+            welcomeViewModel.saveOnBoardingState(completed = true)
         }
     }
 }
@@ -104,7 +111,7 @@ fun FinishButton(modifier: Modifier, pagerState: PagerState, onClick: () -> Unit
     ) {
         AnimatedVisibility(
             modifier = Modifier.fillMaxWidth(),
-            visible = pagerState.currentPage == 2
+            visible = pagerState.currentPage == LAST_ON_BOARDING_PAGE
         ) {
             Button(
                 onClick = onClick,

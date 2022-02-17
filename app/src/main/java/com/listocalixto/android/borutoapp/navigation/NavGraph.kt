@@ -9,6 +9,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
 import com.google.accompanist.pager.ExperimentalPagerApi
 import com.listocalixto.android.borutoapp.app.Constants.ARG_KEY_DETAILS
+import com.listocalixto.android.borutoapp.presentation.screens.home.HomeScreen
 import com.listocalixto.android.borutoapp.presentation.screens.splash.SplashScreen
 import com.listocalixto.android.borutoapp.presentation.screens.welcome.WelcomeScreen
 
@@ -16,7 +17,7 @@ import com.listocalixto.android.borutoapp.presentation.screens.welcome.WelcomeSc
 @ExperimentalPagerApi
 @Composable
 fun SetupNavGraph(navController: NavHostController) {
-    NavHost(navController = navController, startDestination = Screen.Welcome.route) {
+    NavHost(navController = navController, startDestination = Screen.Splash.route) {
         composable(route = Screen.Splash.route) {
             SplashScreen(navController = navController)
         }
@@ -24,7 +25,7 @@ fun SetupNavGraph(navController: NavHostController) {
             WelcomeScreen(navController = navController)
         }
         composable(route = Screen.Home.route) {
-
+            HomeScreen()
         }
         composable(route = Screen.Detail.route, arguments = listOf(navArgument(ARG_KEY_DETAILS) {
             type = NavType.IntType

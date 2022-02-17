@@ -14,6 +14,10 @@ object Constants {
 
     const val ARG_KEY_DETAILS = "heroId"
 
+    const val PREFERENCES_NAME = "boruto_preferences"
+    const val PREF_KEY_ON_BOARDING_COMPLETED = "on_boarding_completed"
+
     const val SIZE_ON_BOARDING_PAGE = 3
+    const val LAST_ON_BOARDING_PAGE = SIZE_ON_BOARDING_PAGE - 1
 
 }
